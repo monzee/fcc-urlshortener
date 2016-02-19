@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<title>Timestamp</title>
+</head>
+<body>
+<h1>Timestamp Service</h1>
+<p>
+made for freecodecamp.org
+</p>
+<h2>Usage:</h2>
+<pre>
+GET /December%2015,%202015
+GET /1450137600
+</pre>
+either will output something like
+<pre>
+{"unix": 1450137600, "natural": "December 15, 2015"}
+</pre>
+If the path argument is not a valid date or timestamp, the service will return
+<pre>
+{"unix": null, "natural": null}
+</pre>
+</body>
+</html>
