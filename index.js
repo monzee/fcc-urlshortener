@@ -19,10 +19,10 @@ const MONTHS = `January February March April May June July August
 
 app.get('/:date', (req, res) => {
     let d = req.params['date'];
-    let date = new Date(isNaN(d) ? d : +d);
+    let date = new Date(isNaN(d) ? d : +d * 1000);
     let unix = null, natural = null;
     if (date != 'Invalid Date') {
-        unix = +date;
+        unix = +date / 1000;
         natural = `${MONTHS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
     }
     res.json({unix, natural});
