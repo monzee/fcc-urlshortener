@@ -1,7 +1,7 @@
 {
-  "name": "mz-fcc-timestamp",
+  "name": "mz-fcc-whoami",
   "version": "0.1.0",
-  "description": "Timestamp service; solution to a freecodecamp.com exercise",
+  "description": "An exercise on reading HTTP request headers.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -15,14 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/monzee/mz-fcc-timestamp"
+    "url": "https://github.com/monzee/fcc-whoami"
   },
   "keywords": [
     "node",
     "heroku",
     "express",
     "freecodecamp",
-    "timestamp"
+    "whoami",
+    "headers"
   ],
   "license": "MIT"
 }

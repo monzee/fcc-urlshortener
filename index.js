@@ -11,23 +11,16 @@ app.set('views', `${__dirname}/views`);
 app.set('view engine', 'ejs');
 
 app.get('/', (_, res) => {
-  res.render('pages/help');
+    res.render('pages/usage');
 });
 
-const MONTHS = `January February March April May June July August 
-                September October November December`.split(/\s+/);
-
-app.get('/:date', (req, res) => {
-    let d = req.params['date'];
-    let date = new Date(isNaN(d) ? d : +d * 1000);
-    let unix = null, natural = null;
-    if (date != 'Invalid Date') {
-        unix = +date / 1000;
-        natural = `${MONTHS[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-    }
-    res.json({unix, natural});
+app.get('/api/whoami', (req, res) => {
+    let ipaddress = req.connection.remoteAddress.match(/:([^:]+)$/)[1] || req.connection.remoteAddress;
+    let language = req.headers['accept-language'].split(',')[0];
+    let software = req.headers['user-agent'].match(/\(([^)]+)\)/)[1] || req.headers['user-agent'];
+    res.json({ipaddress, language, software});
 });
 
 app.listen(app.get('port'), () => {
-  console.log('Node app is running on port', app.get('port'));
+    console.log('Node app is running on port', app.get('port'));
 });
