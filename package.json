@@ -1,29 +1,29 @@
 {
-  "name": "mz-fcc-whoami",
+  "name": "mz-fcc-urlshortener",
   "version": "0.1.0",
-  "description": "An exercise on reading HTTP request headers.",
+  "description": "URL shortening service exercise for freecodecamp",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "ejs": "2.3.3",
-    "express": "4.13.3"
+    "express": "4.13.3",
+    "valid-url": "1.0.9"
   },
   "engines": {
     "node": "4.1.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/monzee/fcc-whoami"
+    "url": "https://github.com/monzee/fcc-urlshortener"
   },
   "keywords": [
     "node",
     "heroku",
     "express",
     "freecodecamp",
-    "whoami",
-    "headers"
+    "url shortener"
   ],
   "license": "MIT"
 }

@@ -1,20 +1,35 @@
 <!doctype html>
 <html>
 <head>
-<title>Who am I?</title>
+<title>URL Shortener</title>
 </head>
 <body>
-<h1>Who am I?</h1>
+<h1>URL Shortener</h1>
 <p>
 made for freecodecamp.com
 </p>
 <h2>Usage:</h2>
 <pre>
-GET <a href="/api/whoami">/api/whoami</a>
+POST /new/&lt;full url&gt;
 </pre>
 <p>
-will return your IPv4 address, primary language and some parenthesized substring
-of your UA string.
+will return an object containing the full URL and a shortened one. E.g.
+</p>
+<pre>
+{"original_url": "&lt;full url&gt;", "short_url": "<%= baseUrl %>/1"}
+</pre>
+<p>
+The shortened URL will redirect to the full URL.
+</p>
+<p>
+The URL will be validated before returning a response. If you wish to create a
+short URL for an invalid URL, pass a <code>allow=true</code> query parameter.
+</p>
+<pre>
+POST /new/this_is_not_a_real_url?allow=true
+</pre>
+<p>
+That probably means you can't shorten a URL with query parameters.
 </p>
 </body>
 </html>
